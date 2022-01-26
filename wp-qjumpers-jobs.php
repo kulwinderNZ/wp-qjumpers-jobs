@@ -94,6 +94,7 @@ function qj_jobs_shortcode()
             $address = $obj['address'];
             $jobsite_url = $jobsiteurl ? $jobsiteurl : 'https://qjumpersjobs.co';
             $link = $jobsite_url . '/applications/add/' . $obj['id'] . '?jobinvitationid='
+            $descriptionLink = $jobsite_url . '/jobs/details/' . str_replace(' ', '_', $obj['title'] . '-' . $obj['id']
             ?>
             <div class="qj-jobs">
                 <div class="qj-jobs_row">
@@ -111,6 +112,9 @@ function qj_jobs_shortcode()
                 </div>
                 <div>
                     <a href="<?php echo esc_attr($link); ?>">Apply</a>
+                </div>
+               <div class="qj-jobs-readmore">
+                    <a href="<?php echo esc_attr($descriptionLink); ?>">Read more</a>
                 </div>
             </div>
         <?php
